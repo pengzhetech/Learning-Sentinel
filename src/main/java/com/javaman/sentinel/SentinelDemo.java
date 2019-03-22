@@ -51,6 +51,7 @@ public class SentinelDemo {
         System.out.println("===== begin to do flow control");
         System.out.println("only 20 requests per second can pass");
 
+
     }
 
     private static void initFlowQpsRule() {
@@ -111,9 +112,6 @@ public class SentinelDemo {
                         + ", pass:" + oneSecondPass
                         + ", block:" + oneSecondBlock);
 
-                if (seconds-- <= 0) {
-                    stop = true;
-                }
             }
 
             long cost = System.currentTimeMillis() - start;
