@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  *
  * 自己搭建Console
- * 启动应用:java -Dcsp.sentinel.dashboard.server=47.106.238.98:8000 -jar sentinel-1.0-SNAPSHOT.jar
+ * 启动应用:java -Dcsp.sentinel.dashboard.server=47.106.238.98:8000 -jar OpenSentinel.jar
  * 启动Console:java -Dserver.port=8000 -Dcsp.sentinel.dashbrd.server=47.106.238.98:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.4.2.jar
  *
  *
