@@ -23,9 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * 自己搭建Console
  * 启动应用:java -Dcsp.sentinel.dashboard.server=47.106.238.98:8000 -jar OpenSentinel.jar
- * 启动Console:java -Dserver.port=8000 -Dcsp.sentinel.dashbrd.server=47.106.238.98:8080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.4.2.jar
- *
- *
+ * 启动Console: nohup java -Dserver.port=8000 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.4.2.jar &
  */
 
 public class SentinelDemo {
@@ -50,7 +48,6 @@ public class SentinelDemo {
 
         System.out.println("===== begin to do flow control");
         System.out.println("only 20 requests per second can pass");
-
 
     }
 
@@ -109,15 +106,15 @@ public class SentinelDemo {
 
                 System.out.println(seconds + " send qps is: " + oneSecondTotal);
                 System.out.println(TimeUtil.currentTimeMillis() + ", total:" + oneSecondTotal
-                        + ", pass:" + oneSecondPass
-                        + ", block:" + oneSecondBlock);
+                    + ", pass:" + oneSecondPass
+                    + ", block:" + oneSecondBlock);
 
             }
 
             long cost = System.currentTimeMillis() - start;
             System.out.println("time cost: " + cost + " ms");
             System.out.println("total:" + total.get() + ", pass:" + pass.get()
-                    + ", block:" + block.get());
+                + ", block:" + block.get());
             System.exit(0);
         }
     }
